@@ -1,19 +1,21 @@
-'use client'
+'use client';
 
-import { useHeader } from '@/hooks/queries/useHeader'
-import { ArrowRightIcon } from 'lucide-react'
-import Link from 'next/link'
-import BackgroundVideo from '../elements/BackgroundVideo'
-import Button from '../ui/Button'
+import { useHeader } from '@/hooks/queries/useHeader';
+import { ArrowRightIcon } from 'lucide-react';
+import Link from 'next/link';
+import BackgroundVideo from '../elements/BackgroundVideo';
+import Button from '../ui/Button';
 
 export default function Hero() {
-    const { data, isFetched } = useHeader()
+    const { data, isFetched } = useHeader();
 
-    if (!isFetched) return null
+    if (!isFetched) return null;
 
     return (
         <section className="w-full h-[660px] relative" id="hero">
-            <BackgroundVideo source={process.env.NEXT_PUBLIC_STRAPI_BASE + data?.video?.data.attributes.url} />
+            <BackgroundVideo
+                source={process.env.NEXT_PUBLIC_STRAPI_BASE + data?.video?.data.attributes.url}
+            />
             <div className="flex items-center justify-center h-full flex-col gap-8 px-4">
                 <h1 className="text-white text-center">
                     <span className="-left-20 md:block hidden -top-5 absolute font-medium">
@@ -33,5 +35,5 @@ export default function Hero() {
                 </Link>
             </div>
         </section>
-    )
+    );
 }
