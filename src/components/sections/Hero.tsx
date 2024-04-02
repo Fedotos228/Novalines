@@ -16,7 +16,7 @@ export default function Hero() {
             <BackgroundVideo
                 source={process.env.NEXT_PUBLIC_STRAPI_BASE + data?.video?.data.attributes.url}
             />
-            <div className="flex items-center justify-center h-full flex-col gap-8 px-4">
+            <div className="flex items-center justify-center h-full flex-col gap-8">
                 <h1 className="text-white text-center">
                     <span className="-left-20 md:block hidden -top-5 absolute font-medium">
                         {'/**'}

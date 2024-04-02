@@ -5,7 +5,7 @@ import Carousel from '../elements/Carousel';
 export default function Gallery() {
     return (
         <section>
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <SectionTitle titleOnly={true}>Gallery</SectionTitle>
                 <Carousel />
             </div>
