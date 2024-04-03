@@ -9,7 +9,7 @@ import { LogoSizes } from './header.types'
 import Navigation from './navigation/Navigation'
 
 export default function Header() {
-    const { data, isFetched } = useHeader()
+    const { data: header, isFetched } = useHeader()
     const screenSizes = useScreenSize()
     const scrollPosition = useScrollPosition()
 
@@ -42,17 +42,16 @@ export default function Header() {
                 }`}>
             <div className="container mx-auto flex px-4 items-center justify-between md:px-0 ">
                 <Link href="/">
-                    {
-                        isFetched &&
+                    {isFetched && (
                         <Image
-                            src={process.env.NEXT_PUBLIC_STRAPI_BASE + data.logo.data.attributes.url}
-                            alt='logo'
+                            src={process.env.NEXT_PUBLIC_STRAPI_BASE + header.logo.data.attributes.url}
+                            alt="logo"
                             width={logoSizes().width}
                             height={logoSizes().height}
                         />
-                    }
+                    )}
                 </Link>
-                <Navigation navigation={data.navigation} />
+                <Navigation navigation={header.navigation} />
             </div>
         </header>
     )

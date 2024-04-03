@@ -1,12 +1,42 @@
 export interface IJob {
-    name: string;
-    location: string;
-    responsibilities: string[];
-    moreInfo: string;
-    quickApply: string;
+    attributes: {
+        title: string
+        desc: string
+        createdAt: string
+        updatedAt: string
+        publishedAt: string
+        location: string
+        slug: string
+        requirements: IRequirements[]
+        departament: IDepartament[]
+    }
+}
+
+interface IDepartament {
+    data: {
+        id: number,
+        attributes: {
+            createdAt: string
+            updatedAt: string
+            title: string
+            desc: string
+        }
+    }
+}
+
+interface IRequirements {
+    id: number
+    title: string
 }
 
 export interface IStatistics {
-    label: string;
-    value: number;
+    label: string
+    value: number | string
+}
+
+export interface IArticle {
+    thumbnail?: string | undefined
+    title: string
+    description: string
+    link: string
 }
