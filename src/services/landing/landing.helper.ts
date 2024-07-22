@@ -1,6 +1,8 @@
 // http://localhost:1337/api/home?populate=Hero
 
+import { getLanguageFromLocalStorage } from '@/libs/utils'
 import qs from 'qs'
+const language = getLanguageFromLocalStorage()
 
 export const heroQuery = qs.stringify({
   populate: {
@@ -13,8 +15,9 @@ export const heroQuery = qs.stringify({
 
 export const jobsQuery = qs.stringify({
   populate: '*',
-  pagination: [
-    { pageSize: 4 }
-  ]
+  pagination: {
+    pageSize: 4
+  },
+  locale: language
 })
 

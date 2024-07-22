@@ -1,13 +1,12 @@
 'use client';
 
-import { useHeader } from '@/hooks/queries/useHeader';
+import { useHero } from '@/hooks/queries/useHero';
 import { ArrowRightIcon } from 'lucide-react';
-import Link from 'next/link';
 import BackgroundVideo from '../elements/BackgroundVideo';
 import Button from '../ui/Button';
 
 export default function Hero() {
-    const { data, isFetched } = useHeader();
+    const { data, isFetched } = useHero();
 
     if (!isFetched) return null;
 
